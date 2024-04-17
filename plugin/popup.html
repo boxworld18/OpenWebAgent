@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>AutoGLM-Your Internet Helper</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/owl.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body style="width: 400px; height: auto">
+    <div class="overlayer" id="overlayer">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+
+    <section class="banner-1 bg_img" data-background="assets/images/banner/banner-1.jpg" style=" height: 40px; width: auto;">
+        <div class="container">
+            <div class="banner-content cl-white">
+                <h1 class="title">Autoglm</h1>
+                <p>Surf the Internet as You Want</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container" style="margin-bottom: 20px">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="model1-tab" data-toggle="tab" role="tab" aria-controls="model1" aria-selected="true">模型1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="model2-tab" data-toggle="tab" role="tab" aria-controls="model2" aria-selected="false">模型2</a>
+            </li>
+        </ul>
+        <span>模型选择</span>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="model1" role="tabpanel" aria-labelledby="model1-tab">
+                模型1
+            </div>
+            <div class="tab-pane fade" id="model2" role="tabpanel" aria-labelledby="model2-tab">
+                模型2
+            </div>
+        </div>
+    </div>
+
+    <div class="how-search-section padding-bottom mt--83">
+        <div class="container">
+            <div class="search-form">
+                <div>
+                    <input type="text" id="task" name="task" placeholder="Input your target here...">
+                    <p class="textbox" id="cot-box"></p>
+                    <p class="textbox" id="answer-box"></p>
+                </div>
+                <div class="button-container">
+                    <div>
+                        <i class="fas fa-play start-icon selected" type="submit"></i>
+                        <i class="fas fa-pause pause-icon selected" style="display: none;"></i>
+                        <i class="fas fa-play stop-icon disabled" style="display: none;"></i>
+                        <i id="status-box">Web Agent</i>
+                    </div>
+                    <i class="fas fa-redo reset-icon selected"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/owl.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{
+    "name": "Web Agent",
+    "version": "1.2",
+    "manifest_version": 3,
+    "description": "A Chrome extension that captures webpage screenshots and allows user input tasks and feedback.",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage",
+        "unlimitedStorage",
+        "webNavigation",
+        "notifications",
+        "scripting",
+        "background",
+        "downloads",
+        "nativeMessaging",
+        "tabCapture",
+        "sidePanel"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Web Agent",
+        "default_popup": "popup.html"
+    },
+    "side_panel": {
+        "default_path": "sidebar.html"
+    }
+}

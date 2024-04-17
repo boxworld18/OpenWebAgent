@@ -1,0 +1,139 @@
+/* Dialogue container to hold both avatar and bubble */
+.dialogue-container {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    padding-left: 60px; /* Give space for the avatar */
+    padding-right: 10px;
+    width: 100%; /* Adjust width as needed */
+}
+
+/* Dialogue bubble styling */
+.dialogue {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Adjust width as needed */
+    max-width: 600px; /* Maximum width can be adjusted as needed */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dialogue-loading {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%; /* Adjust width as needed */
+    max-width: 600px; /* Maximum width can be adjusted as needed */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* .dialogue::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+} */
+
+/* Avatar image styling */
+.avatar {
+    position: absolute;
+    width: 40px; /* Width of the avatar image */
+    height: 40px; /* Height of the avatar image */
+    /* background-color: #9019da; Placeholder color, replace with actual image */
+    border-radius: 50%;
+    left: -50px; /* Position based on the dialogue bubble's left padding */
+    top: 10px;
+    background-image: url('./assets/images/robot.jpg'); /* Path to the user's avatar image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* loading image styling */
+.loading {
+    position: absolute;
+    width: 40px; /* Width of the avatar image */
+    height: 40px; /* Height of the avatar image */
+    /* background-color: #9019da; Placeholder color, replace with actual image */
+    border-radius: 50%;
+    left: 20px; /* Position based on the dialogue bubble's left padding */
+    top: 10px;
+    background-image: url('./assets/images/loading.gif'); /* Path to the user's avatar image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Text inside the dialogue bubble */
+
+.dialogue p {
+    margin: 0;
+    text-align: left;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+}
+
+/* 搜索框容器样式 */
+.search-container {
+    display: flex;
+    align-items: center;
+    /* border-radius: 20px; 圆角矩形 */
+    /* border: 1px solid #ccc; 边框 */
+    background-color: rgb(118,10,190); /* 背景颜色 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+    padding: 5px 10px;
+    width: 100%; 
+    /* margin-top: 20px; 与上面元素的距离 */
+    /* margin-bottom: 20px; 与下面元素的距离 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
+}
+
+/* 搜索输入框样式 */
+.search-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px; /* 与按钮的间隔 */
+    font-size: 16px; /* 文字大小 */
+    color: #333; /* 文字颜色 */
+}
+
+/* 按钮容器 */
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 当输入框被聚焦时取消边框 */
+.search-input:focus {
+    outline: none;
+}
+
+.rect {
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(118,10,190g)
+}
+
+.message-box {
+    width: 100vw; /* 视口宽度 */
+    height: 83vh; /* 视口高度 */
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 1px solid #d0d0d0;
+    font-family: "Josefin Sans", sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* 纵向排列元素 */
+    align-items: flex-start; /* 向左对齐 */
+    gap: 10px; /* 元素之间的距离 */
+    margin: 0;
+    overflow-y: auto; /* 如果内容超出，添加垂直滚动条 */
+}

@@ -1,0 +1,268 @@
+body {
+    background: linear-gradient(to right, #a591b7, #f0edf4);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    width: 400px;
+    margin: 25px auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 300px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #bb98db;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tab:not(:last-child) {
+    margin-right: 10px;
+}
+
+.tab.active {
+    background-color: #c186ea;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 200px;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+#task {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.button-container>*:not(:last-child) {
+    margin-right: 10px;
+}
+
+.textbox {
+    font-size: 12px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container>*:not(:last-child) {
+    margin-right: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-icon:before {
+    content: "\f04b";
+}
+
+.pause-icon:before {
+    content: "\f04c";
+}
+
+.stop-icon:before {
+    content: "\f04d";
+}
+
+.save-icon:before {
+    content: "\f0c7";
+}
+
+.camera-icon:before {
+    content: "\f030";
+}
+
+.send-icon:before {
+    content: "\f1d8";
+}
+
+.video-icon:before {
+    content: "\f03d";
+}
+
+.disabled {
+    color: #808080;
+}
+
+.selected:hover {
+    color: #0056b3 !important;
+}
+
+#panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#web_info {
+    text-align: left;
+    margin-top: 10px;
+}
+
+#task_info {
+    text-align: left;
+    min-width: 90vw;
+    margin-top: 10px;
+}
+
+.content {
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.target-box {
+    width: 20%;
+}
+
+.table-cell {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cell-image {
+    padding-right: 10px;
+    flex: 3;
+    overflow: hidden;
+}
+
+.cell-text {
+    padding-right: 10px;
+    flex: 6;
+    overflow: hidden;
+}
+
+.cell-button {
+    padding: 5px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.content-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.content-url {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 3px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.content-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.content-button-container>*:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+#hr {
+    color: #555;
+}
+
+.add-menu {
+    position: absolute;
+    display: inline-block;
+    flex-shrink: 0;
+
+    right: 0;
+    top: 20px;
+    z-index: 20;
+
+    width: 100px;
+    margin-top: 0.1rem;
+    background: white;
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
+
+    transform: translateY(0.5rem);
+    visibility: hidden;
+    opacity: 0;
+
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 10px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+}
+
+.show {
+    transform: translateY(0rem);
+    visibility: visible;
+    opacity: 1;
+}
+
+.add-menu-item {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.add-menu-item:hover {
+    background-color: #166e67;
+    color: white;
+}

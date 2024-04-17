@@ -1,0 +1,27 @@
+# local storage
+files/
+src/
+setting/
+output/
+result/
+checkpoint/
+env/
+tmp/
+test/
+
+# large files
+trace.zip
+*.bin
+logs/
+
+# test
+test.py
+
+# trash
+.DS_Store
+
+# python cache
+__pycache__/
+
+#
+.env

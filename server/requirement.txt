@@ -1,0 +1,13 @@
+aiohttp
+emoji
+huggingface_hub
+lxml
+matplotlib
+Pillow
+Requests
+rouge_score
+torch
+transformers
+flask[async]
+tiktoken
+openai==0.28.1
