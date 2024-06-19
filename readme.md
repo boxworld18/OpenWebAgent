@@ -17,3 +17,15 @@ OpenWebAgent is an open toolkit that enables model-based web agents to streamlin
 ## Usage
 
 Please refer to the `README.md` in the corresponding directory.
+
+## Citation
+If you use this code for your research, please cite our paper.
+
+```
+@inproceedings{iong2024openwebagent,
+    title     = {OpenWebAgent: An Open Toolkit to Enable Web Agents on Large Language Models},
+    author    = {Iat Long Iong and Xiao Liu and Yuxuan Chen and Hanyu Lai and Shuntian Yao and Pengbo Shen and Hao Yu and Yuxiao Dong and Jie Tang},
+    booktitle = {ACL 2024 System Demonstration Track},
+    year      = {2024}
+}
+```
