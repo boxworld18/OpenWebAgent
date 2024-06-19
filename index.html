@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="OpenWebAgent, a convenient framework for developing LLM- and LMM-based web agents.">
+  <meta name="keywords" content="OpenWebAgent, Webagent, LLM Agent, LLM, LMM, VLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenWebAgent: An Open Toolkit to Enable Web Agents on Large Language Models</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BT6KVSTW5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8BT6KVSTW5');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://github.com/boxworld18">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="">
+              AutoWebGLM
+            </a>
+            <a class="navbar-item" href="">
+              OpenWebAgent
+            </a>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">OpenWebAgent: An Open Toolkit to Enable Web Agents on Large
+              Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Iat Long Iong<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Xiao Liu<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Yuxuan Chen<sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                Hanyu Lai<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Shuntian Yao<sup>2</sup>,
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Pengbo Shen<sup>3</sup>,
+              </span>
+              <span class="author-block">
+                Hao Yu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://keg.cs.tsinghua.edu.cn/yuxiao/">Yuxiao Dong</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://keg.cs.tsinghua.edu.cn/jietang/">Jie Tang</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>Beijing University of Posts and Telecommunications,</span>
+              <span class="author-block"><sup>3</sup>University of the Chinese Academy of Sciences</span>
+              <span class="author-block"><sup>*</sup>Equal contribution</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/oFQwuVnkQD4" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/boxworld18/OpenWebAgent"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-box"></i>
+                    </span>
+                    <span>Plugin</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <h4 class="title is-5">(a) Ask for detailed weather report.</h4>
+          <video class="video" controls="" autoplay="" playsinline="" muted="" loop="">
+            <source src="./static/videos/demo_weather.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <h4 class="title is-5">(b) Ask for game recommandation.</h4>
+          <video class="video" controls="" autoplay="" playsinline="" muted="" loop="">
+            <source src="./static/videos/demo_game.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column">
+          <h4 class="title is-5">(c) Search for today's deals on Amazon.</h4>
+          <video class="video" controls="" autoplay="" playsinline="" muted="" loop="">
+            <source src="./static/videos/demo_shop.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <h4 class="title is-5">(d) Search for information about the black hole.</h4>
+          <video class="video" controls="" autoplay="" playsinline="" muted="" loop="">
+            <source src="./static/videos/demo_knowledge.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce OpenWebAgent, an open toolkit that enables model-based web agents to streamline
+              human-computer interactions by automating tasks on webpages.
+            </p>
+            <p>
+              At the heart of this toolkit is our innovative web agent framework, which allows developers to easily
+              integrate any LLM and VLM to perform web automation tasks.
+              The framework integrates a sophisticated HTML parser with a rapid action generation module and a
+              user-friendly interface to improve the ease and efficiency of human-computer interaction and also provides
+              options such as an OCR module to facilitate custom plugins.
+            </p>
+            <p>
+              OpenWebAgent is unique in its support for both
+              text-based and visual-based models, allowing models to perform a wide range of user-defined tasks, making
+              it easier than ever to develop powerful, task-oriented web agents.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/oFQwuVnkQD4?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Desing. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Design</h2>
+
+          <img src="./static/images/workflow.png" alt="Workflow">
+
+          <div class="content has-text-justified">
+            <p>
+              To enhance the flexibility and usability of our toolkit, we have modularized it into several key
+              components: a Web Processing Module, an Operation Generation Module, an Execution Module, and a Process
+              Control Module. The Web Processing and Operation Generation Modules are deployed on the backend, while the
+              Process Control and Execution Modules are integrated into a plugin.
+            </p>
+          </div>
+
+
+          <!-- Web Processing Module. -->
+          <h3 class="title is-4">Web Processing Module</h3>
+          <div class="content has-text-justified">
+            <p>
+              This module extracts useful elements of HTML, simplifies HTML input, performs OCR on screenshots, and adds
+              element labels to screenshots.
+            </p>
+          </div>
+          <!--/ Web Processing Module. -->
+
+          <!-- Operation Generation Module. -->
+          <h3 class="title is-4">Operation Generation Module</h3>
+          <div class="content has-text-justified">
+            <p>
+              The main purpose of this module is to predict the next action based on the user's task and the current
+              webpage context. At this stage, we provide a prompt for the LLM that includes the current task, the
+              simplified HTML of the webpage, and previous command sequences, and for the VLM, we also provide labeled
+              screenshots for the model to use. The model outputs the next action in natural language, which we match
+              against a pre-defined action space, and returns the action name and parameters if the match is successful.
+            </p>
+            <p>
+              In this module, models are accessed through interfaces, which means that developers creating new web
+              agents can effortlessly integrate any model into our toolkit by simply setting up an API interface for
+              accessing the model. It is important to note that we have reserved an interface to a visual processing
+              module in the toolkit, located between the web processing module and the operation generation module, to
+              serve better the needs of developers working with multimodal agents.
+            </p>
+            <p>
+              To address the lack of image information in the language-based agent, the module is pre-configured with
+              an OCR interface that takes a screenshot of a webpage as input and returns the webpage information
+              contained in the screenshot. VLM agent developers have the option to replace the preconfigured modules and
+              integrate their own vision modules into our toolkit, which simplifies the development of multimodal web
+              agents.
+            </p>
+          </div>
+          <!--/ Operation Generation Module. -->
+
+          <!-- Execution Module. -->
+          <h3 class="title is-4">Execution Module</h3>
+          <div class="content has-text-justified">
+            <p>
+              This module is used to execute specific operation instructions on a webpage. When the module receives an
+              operation instruction from the operation generator module, it looks for the element that actually needs to
+              be operated on and then executes the operation on the webpage using a predefined script. When the
+              operation is completed, it provides a response feedback to ensure that the model is aware of the execution
+              of the operation to adjust the plan.
+            </p>
+          </div>
+          <!--/ Execution Module. -->
+
+          <!-- Process Control Module. -->
+          <h3 class="title is-4">Process Control Module</h3>
+          <div class="content has-text-justified">
+            <p>
+              This module is implemented using a finite state machine. The main purpose of this is to coordinate the
+              execution of tasks and to facilitate the transfer of information between the above modules.
+            </p>
+            <p>
+              This module serves as the primary interface for user interaction. It receives various inputs, such as user
+              task commands and control commands (e.g. start, pause, reset). The module also records user input tasks
+              and previous operation paths. When the user issues a start command, the module first fetches the HTML
+              source and screenshot of the current webpage, and information about the clickable elements, and passes
+              them to the web processing module (including the visual processing module). Additionally, the module sends
+              the task and action path records to the action generation module.
+            </p>
+            <p>
+              The module sends task and action path records to the operation generation module and waits for a response
+              from the operation generation module. It then parses the action into various parameters. If a valid web
+              operation returns, its details are sent to the execution module. Once a response arrives from the
+              execution module, the operation path updates and the process of retrieving webpage information repeats.
+              When the process is complete, the user is notified by the module.
+            </p>
+            <p>
+              This workflow enables real-time user interaction, users can send control commands such as pause, reset, or
+              update their task description at any time. The process control module adapts accordingly, ensuring
+              flexible and efficient interaction.
+            </p>
+          </div>
+          <!--/ Process Control Module. -->
+
+        </div>
+      </div>
+      <!--/ Design. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Demonstration</h2>
+
+      <div class="columns is-centered">
+
+        <!-- Daily Weather Inquiry. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Daily Weather Inquiry</h3>
+            <p>
+              The objective was to determine the day's weather conditions. Execution involved:
+            </p>
+            <ul>
+              <li>Step1: Input in SearchBar "today's weather report"</li>
+              <li>Step2: Press SearchButton</li>
+              <li>Step3: Provide Response</li>
+            </ul>
+            <img src="./static/images/demo1.png" alt="Daily Weather Inquiry">
+            <p>
+              As shown in the figure, we leads to a webpage offering a detailed local weather forecast,
+              successfully achieving the intended query.
+            </p>
+          </div>
+        </div>
+        <!--/ Daily Weather Inquiry. -->
+
+        <!-- Deals Search. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Deals Search</h3>
+            <p>
+              The task was to assist in finding today's deals. The steps were as follows:
+            </p>
+            <ul>
+              <li>Step1: Click "today's deals"</li>
+              <li>Step2: Scroll down</li>
+              <li>Step3: List Today's Deals</li>
+            </ul>
+            <img src="./static/images/demo2.png" alt="Deals Search">
+            <p>
+              As shown in the figure, we were directed to a deals page, completing the task.
+            </p>
+          </div>
+        </div>
+        <!--/ Deals Search. -->
+      </div>
+
+      <div class="columns is-centered">
+
+        <!-- Game Recommendation. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Game Recommendation</h3>
+            <p>
+              The task was to assist in selecting a PS5 game. The actual execution steps can be summarized as follows:
+            </p>
+            <ul>
+              <li>Step1: Input "PS5 Game Recommendation" in SearchBar</li>
+              <li>Step2: Hit SearchButton</li>
+              <li>Step3: Scroll down</li>
+              <li>Step4: Click the link of "Ratchet"</li>
+              <li>Step5: Click a video of "Ratchet"</li>
+              <li>Step6: Answer</li>
+            </ul>
+            <img src="./static/images/demo3.png" alt="Game Recommendation" width="95%">
+            <p>
+              As shown in the figure, we ultimately reached a wiki page about black hole, obtaining some basic info as
+              the answer, and effectively completing the task.
+            </p>
+          </div>
+        </div>
+        <!--/ Game Recommendation. -->
+
+        <!-- Finding Pictures. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Finding Pictures</h3>
+            <p>
+              The targeted task to be executed is "Help find a beautiful picture of the Arctic". The steps were as
+              follows:
+            </p>
+            <ul>
+              <li>Step1: Type SearchBar "Arctic Pictures"</li>
+              <li>Step2: Click SearchButton</li>
+              <li>Step3: Click A picture in the search result</li>
+              <li>Step4: Go backward</li>
+              <li>Step5: Click Another in the search result</li>
+              <li>Step6: Answer</li>
+            </ul>
+            <img src="./static/images/demo7.png" alt="Finding Pictures">
+            <p>
+              As shown in the figure, we ultimately reached a page displaying an image of the Arctic, obtaining "Found a
+              picture of the Arctic for you" as the answer, effectively completing the task.
+            </p>
+          </div>
+        </div>
+        <!--/ Finding Pictures. -->
+
+      </div>
+
+      <div class="columns is-centered">
+
+        <!-- Knowledge Query. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Knowledge Query</h3>
+            <p>
+              The targeted task to be executed is "Search and tell me some basic info about the black hole". The steps
+              undertaken were:
+            </p>
+            <ul>
+              <li>Step1: Type SearchBar "black hole"</li>
+              <li>Step2: Click SearchButton</li>
+              <li>Step3: Click Wiki</li>
+              <li>Step4: Scroll down</li>
+              <li>Step5: Answer</li>
+            </ul>
+            <img src="./static/images/demo6.png" alt="Knowledge Query" width="89%">
+            <p>
+              As shown in the figure, we ultimately reached a wiki page about black hole, obtaining some basic info as
+              the answer, and effectively completing the task.
+            </p>
+          </div>
+        </div>
+        <!--/ Knowledge Query. -->
+
+        <!-- Follow Others on Twitter. -->
+        <div class="column">
+          <div class="content">
+            <h3 class="title is-4">Follow Others on Twitter</h3>
+            <p>
+              The mission was to follow Bill Gates on Twitter. The actual execution steps can be summarized as follows:
+            </p>
+            <ul>
+              <li>Step1: Type in SearchBar "Bill Gates"</li>
+              <li>Step2: Click SearchButton</li>
+              <li>Step3: Scroll down</li>
+              <li>Step4: Click the follow button next to Bill Gates</li>
+              <li>Step5: Finish and Exit</li>
+            </ul>
+            <img src="./static/images/demo4.png" alt="Follow Others on Twitter">
+            <p>
+              As shown in the figure, we were directed to a page of Bill Gates, who is followed by our account,
+              completing the task.
+            </p>
+          </div>
+        </div>
+        <!--/ Follow Others on Twitter. -->
+
+      </div>
+
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{iong2024openwebagent,
+  title     = {OpenWebAgent: An Open Toolkit to Enable Web Agents on Large Language Models},
+  author    = {Iat Long Iong and Xiao Liu and Yuxuan Chen and Hanyu Lai and Shuntian Yao and Pengbo Shen and Hao Yu and Yuxiao Dong and Jie Tang},
+  booktitle = {ACL 2024 System Demonstration Track},
+  year      = {2024}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/videos/openwebagent_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/boxworld18" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/boxworld18/OpenWebAgent">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              The design of this website is based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
